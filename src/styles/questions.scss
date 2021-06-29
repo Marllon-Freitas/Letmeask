@@ -1,0 +1,117 @@
+.question {
+  background: var(--white-clr);
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  padding: 24px;
+  text-align: justify;
+
+  &.answered {
+    background: var(--light-gray-clr);
+    footer .user-info span {
+      color: var(--text-clr);
+    }
+  }
+
+  &.highLighted {
+    background: var(--light-gray-clr);
+    border: 1px solid var(--purple-clr);
+    footer .user-info span {
+      color: var(--text-clr);
+    }
+    footer button.answer-icon {
+      svg path {
+        stroke: var(--purple-clr);
+      }
+    }
+  }
+
+  & + .question {
+    margin-top: 8px;
+  }
+
+  p {
+    color: var(--text-clr);
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+    transition: 0.4s ease-in-out;
+  
+    .user-info {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+      }
+
+      span {
+        margin-left: 8px;
+        color: var(--gray-clr);
+        font-size: 14px;
+      }
+    }
+
+    > div {
+      display: flex;
+      gap: 16px;
+    }
+
+
+    button {
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.4s ease-in-out;
+
+      &.delete-icon {
+        &:hover {
+          svg path {
+            stroke: #E73F5D;
+          }
+        }
+      }
+
+      &.answer-icon {
+        &:hover {
+          svg path {
+            stroke: var(--purple-clr);
+          }
+        }
+      }
+
+      &.check-icon {
+        &:hover {
+          svg circle, path {
+            stroke: #69B99D;
+          }
+        }
+      }
+
+      &.like-button {
+        display: flex; 
+        align-items: flex-end;
+        color: var(--gray-clr);
+        gap: 8px;
+
+        &:hover {
+          svg path {
+            stroke: var(--purple-clr);
+          }
+        }
+
+        &.liked {
+          color: var(--purple-clr);
+          svg path {
+            stroke: var(--purple-clr);
+          }
+        }
+      }
+    }
+  }
+}
